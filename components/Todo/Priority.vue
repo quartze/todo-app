@@ -17,7 +17,7 @@
 
 		<div
 			class="tags-dropdown-wrapper"
-			v-if="displayTagChooser"
+			v-if="displayTagChooser && !props.dropdownDisabled"
 		>
 			<ul class="tags-dropdown">
 				<li

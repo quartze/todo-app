@@ -1,5 +1,6 @@
 export interface PriorityProps {
-	defaultPriority?: E_Priorities;
+    defaultPriority?: E_Priorities;
+    dropdownDisabled: boolean
 }
 
 export interface CheckboxProps {

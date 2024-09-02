@@ -8,7 +8,7 @@
     </div>
 
     <div class="todo-item-priority">
-      <TodoPriority @change-priority="handlePriority" :default-priority="priority" />
+      <TodoPriority :dropdown-disabled="isEnd" @change-priority="handlePriority" :default-priority="priority" />
     </div>
 
     <div class="todo-item-settings">
