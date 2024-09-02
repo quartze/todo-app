@@ -1,11 +1,11 @@
 <template>
-  <NuxtPage />
+	<NuxtPage />
 </template>
 
 <script setup>
-import { useTodoStore } from './store/todo';
+	import { useTodoStore } from "./store/todo";
 
-onMounted(() => {
-  useTodoStore().fetchTasks();
-})
+	onMounted(() => {
+		useTodoStore().fetchTasks();
+	});
 </script>

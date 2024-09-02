@@ -1,8 +1,7 @@
 <template>
 	<div
 		class="todo-tag"
-		@mouseenter="toggleTagChooser"
-		@mouseleave="toggleTagChooser"
+		ref="tagWrapper"
 	>
 		<div
 			class="selected-tag tag-item"
@@ -45,18 +44,17 @@
 </template>
 
 <script lang="ts" setup>
+	import { ref, onMounted, onBeforeUnmount } from "vue";
 	import { E_Priorities } from "~/types/enum";
-  import type { PriorityProps } from "~/types/interfaces";
+	import type { PriorityProps } from "~/types/interfaces";
 
 	const props = defineProps<PriorityProps>();
-
 	const emits = defineEmits(["changePriority"]);
 
-	// Vars
-	const tag = ref(
-		props.defaultPriority ? props.defaultPriority : E_Priorities.Medium
-	);
+	// Variables
+	const tag = ref(props.defaultPriority || E_Priorities.Medium);
 	const displayTagChooser = ref(false);
+	const tagWrapper = ref<HTMLElement | null>(null);
 
 	// Methods
 	const toggleTagChooser = () => {
@@ -64,10 +62,26 @@
 	};
 
 	const changeTag = (newTag: E_Priorities) => {
-    tag.value = newTag;
-    emits("changePriority", newTag);
-    toggleTagChooser();
+		tag.value = newTag;
+		emits("changePriority", newTag);
+		displayTagChooser.value = false; // Close dropdown after selection
 	};
+
+	// Handle click outside to close the dropdown
+	const handleClickOutside = (event: MouseEvent) => {
+		if (tagWrapper.value && !tagWrapper.value.contains(event.target as Node)) {
+			displayTagChooser.value = false;
+		}
+	};
+
+	// Add and remove event listeners
+	onMounted(() => {
+		document.addEventListener("click", handleClickOutside);
+	});
+
+	onBeforeUnmount(() => {
+		document.removeEventListener("click", handleClickOutside);
+	});
 </script>
 
 <style scoped>
@@ -92,7 +106,7 @@
 	}
 
 	.tags-dropdown-wrapper {
-		@apply absolute w-full lg:w-auto p-2 z-10 top-4 border border-gray-200 bg-white rounded-lg;
+		@apply absolute w-full lg:w-auto p-2 z-10 top-8 right-0 border border-gray-200 bg-white rounded-lg;
 	}
 
 	.tags-dropdown {

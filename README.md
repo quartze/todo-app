@@ -4,16 +4,15 @@
 
 [https://todo.wavecloud.pl](https://todo.wavecloud.pl)
 
-  
 <h2>🧐 Features</h2>
 
 Here're some of the project's best features:
 
-*   Localstorage data save
-*   Asynchronious data fetching/adding
-*   Fast and simple
-*   RWD
-*   Custom made components
+- Localstorage data save
+- Asynchronious data fetching/adding
+- Fast and simple
+- RWD
+- Custom made components
 
 <h2>🛠️ Installation Steps:</h2>
 
@@ -24,7 +23,7 @@ Here're some of the project's best features:
 ```
 npm install
 
-yarn install 
+yarn install
 
 bun install
 ```
@@ -40,16 +39,16 @@ yarn dev
 
 bun dev
 ```
-  
+
 <h2>💻 Built with</h2>
 
 Technologies used in the project:
 
-*   Nuxt3
-*   @vue/iconify
-*   Pinia
-*   TailwindCSS
+- Nuxt3
+- @vue/iconify
+- Pinia
+- TailwindCSS
 
 <h2>🛡️ License:</h2>
 
-Todo App by wavecloud is licensed under CC BY 4.0 
+Todo App by wavecloud is licensed under CC BY 4.0
