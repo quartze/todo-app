@@ -19,6 +19,7 @@
 <h2>🛠️ Installation Steps:</h2>
 
 <p>1. Copy github repositorium</p>
+
 ```
 git clone https://github.com/quartze/todo-app.git todo-app
 ```
