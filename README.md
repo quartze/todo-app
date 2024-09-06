@@ -55,4 +55,5 @@ Technologies used in the project:
 
 <h2>🛡️ License:</h2>
 
-Todo App by wavecloud is licensed under CC BY 4.0
+Todo App by wavecloud is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+
