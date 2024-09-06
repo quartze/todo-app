@@ -7,7 +7,7 @@
 <h2>🔥 Features</h2>
 
 - localStorage data save
-- Asynchronious data fetching/adding
+- Asynchronous data fetching/adding
 - Easy to maintain
 - Fast and simple
 - Responsive design
